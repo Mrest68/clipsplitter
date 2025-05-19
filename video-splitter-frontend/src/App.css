@@ -1,0 +1,317 @@
+:root {
+  --primary: #3498db;
+  --primary-dark: #2980b9;
+  --secondary: #2ecc71;
+  --secondary-dark: #27ae60;
+  --danger: #e74c3c;
+  --danger-dark: #c0392b;
+  --text: #333;
+  --text-light: #777;
+  --bg: #f8f9fa;
+  --bg-dark: #e9ecef;
+  --border: #dee2e6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+.app-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.app-description {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-light);
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.dropzone {
+  width: 100%;
+  max-width: 500px;
+  min-height: 200px;
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-color: white;
+  text-align: center;
+}
+
+.dropzone.active {
+  border-color: var(--primary);
+  background-color: rgba(52, 152, 219, 0.05);
+}
+
+.dropzone.has-file {
+  border-color: var(--secondary);
+  background-color: rgba(46, 204, 113, 0.05);
+}
+
+.file-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.file-name {
+  font-weight: bold;
+  word-break: break-all;
+}
+
+.file-size, .file-type {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.upload-button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.upload-button:disabled {
+  background-color: var(--bg-dark);
+  cursor: not-allowed;
+}
+
+.progress-container {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--bg-dark);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.progress-percentage {
+  text-align: center;
+  font-weight: bold;
+}
+
+.api-status-error {
+  width: 100%;
+  background-color: rgba(231, 76, 60, 0.1);
+  border-left: 4px solid var(--danger);
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 4px;
+}
+
+.error-container {
+  width: 100%;
+  max-width: 500px;
+  background-color: rgba(231, 76, 60, 0.1);
+  border-left: 4px solid var(--danger);
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.error-message {
+  color: var(--danger-dark);
+  font-weight: bold;
+}
+
+.error-details {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.results-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.results-section h2, .results-section h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.video-info {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.clips-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.clip-item {
+  background-color: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.clip-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.clip-name {
+  font-weight: bold;
+  word-break: break-all;
+}
+
+.clip-duration, .clip-start {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.download-button {
+  padding: 0.5rem 1rem;
+  background-color: var(--secondary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.download-button:hover {
+  background-color: var(--secondary-dark);
+}
+
+.save-locally-section {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.save-input-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.path-input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.save-button {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.save-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.save-button:disabled {
+  background-color: var(--bg-dark);
+  cursor: not-allowed;
+}
+
+.save-result {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgba(46, 204, 113, 0.1);
+  border-left: 4px solid var(--secondary);
+  border-radius: 4px;
+}
+
+.success-message {
+  color: var(--secondary-dark);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1rem;
+  }
+  
+  .clips-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .save-input-container {
+    flex-direction: column;
+  }
+}
